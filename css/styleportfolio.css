@@ -2,6 +2,7 @@
 html {
 	max-width:960px;
 	min-width:960px;
+	font-family: Helvetica;
 	}
 #header {
 	width: 100%;
@@ -20,31 +21,166 @@ body {
 	font-family: Helvetica;
 	font-size: 24px;
 	color: gray;
+
 }
+p {
+	font-size: 10px;
+	word-spacing: normal;
+	margin: -30px 0px;
+	font-family: Helvetica;
+	float:left;	
+	
+}
+
+p2 {
+	font-size: 10px;
+	word-spacing: normal;
+	margin: -35px 0px;
+	font-family: Helvetica;	
+	float: left;
+}
+p3 {
+	font-size: 10px;
+	word-spacing: normal;
+	margin: -40px 0px;	
+	font-family: Helvetica;
+	float:left;
+}
+
+p4 {
+	font-size: 10px;
+	word-spacing: normal;
+	margin: -30px 0px;
+	font-family: Helvetica;	
+	float:left;
+}
+p5 {
+	font-size: 10px;
+	word-spacing: normal;
+	margin: -30px 0px;
+	font-family: Helvetica;
+	float:left;	
+}
+
+p6 {
+	font-size: 10px;
+	word-spacing: normal;
+	margin: -30px 0px;
+	font-family: Helvetica;	
+	float:left;
+}
+p7 {
+	font-size: 10px;
+	word-spacing: normal;
+	margin: -30px 0px;
+	font-family: Helvetica;	
+	float:left;
+}
+
+p8 {
+	font-size: 10px;
+	word-spacing: normal;
+	margin: -35px 0px;
+	font-family: Helvetica;
+	float:left;	
+}
+p9 {
+	font-size: 10px;
+	word-spacing: normal;
+	margin: -30px 0px;
+	font-family: Helvetica;
+	float:left;	
+}
+p10 {
+	font-size: 10px;
+	word-spacing: normal;
+	margin: -30px 0px;
+	font-family: Helvetica;
+	float:left;	
+}
+
 #examples {
+	float:left;
 	line-height: 20px;
 	width: 80%;
 	height: 100px;
-	margin: 0px 0px;
+	margin: 0px 10px;
+	word-spacing: normal;
+}
+#political {
+	float:left;
+	line-height: 20px;
+	width: 80%;
+	height: 100px;
+	margin: -20px 300px;
 	word-spacing: 10px;
 }
-#weather {
-	line-height: 10px;
-	width: 50%;
+#poland {
+	float:left;
+	line-height: 20px;
+	width: 80%;
 	height: 100px;
-	margin: -100px 550px;
+	margin: 180px 10px;
+	word-spacing: 10px;
+}
+#examples2 {
+	float:left;
+	line-height: 20px;
+	width: 80%;
+	height: 100px;
+	margin: 10px 0px;
+	word-spacing: 10px;
+}
+#vamp {
+	float:right;
+	line-height: 20px;
+	width: 80%;
+	height: 100px;
+	margin: -388px -105px;
+	word-spacing: 10px;
+}
+#sports {
+	float:left;
+	line-height: 20px;
+	width: 80%;
+	height: 100px;
+	margin: -50px 305px;
+	word-spacing: 10px;
+}
+#wayfinding {
+	float:left;
+	line-height: 20px;
+	width: 80%;
+	height: 100px;
+	margin: 130px 0px;
+	word-spacing: 10px;
 }
 #interactive {
-	margin: 400px 10px;	
-	line-height: 10px;
+	margin: 1220px 10px;	
+	line-height: 20px;
 	height: 100px;
-	width: 50%;
+	width: 80%;
 }
-#vampire {
-	margin: -500px 280px;
-	line-height: 10px;
-	height: 100px;	
+#wolf {
+	margin: -1270px 300px;	
+	line-height: 20px;
+	height: 100px;
+	width: 80%;
 }
+#arizona {
+	margin: 1167px 550px;	
+	line-height: 20px;
+	height: 100px;
+	width: 80%;
+}
+#publications {
+	margin: -930px 10px;	
+	line-height: 20px;
+	height: 100px;
+	width: 80%;
+}
+
+
 footer {
 	text-align:center;
 	width: 100%;
@@ -53,15 +189,15 @@ footer {
 	color: gray;
 	font-family: Helvetica;
 	font-size:12px;
-	margin: 310px 80px;
+	margin: 1200px 80px;
 }
 #navigation {
-	margin: 100px 540px;
+	float: right;
+	margin: -1820px -300px;
 	text-align: center;
 	word-spacing: 50px;
 	width: 80%;
 	height: 180px;
-	background: #FFF;
 	font-size: 40px;
 	font-family: Helvetica;
 	line-height: 50px;	
