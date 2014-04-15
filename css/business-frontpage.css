@@ -6,7 +6,7 @@ body {
 .business-header {
 	height: 250px;
 	background:url(../img/header.png) center center no-repeat;
-	background-size: cover;
+	background-size: 90%;
 }
 
 /* adjust the color and text shadow to optimize legibility once you have an image set - you can also change the vertical positioning if desired  */
