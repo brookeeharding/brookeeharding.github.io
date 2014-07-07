@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<div class="wrapper">
+<head>
+<link rel="stylesheet" type="text/CSS" href="css/style.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>A Local's Guide to Northfield</title>
+<h1>Historic Northfield:</h1>
+<h2>A Local's Guide to Cows, Colleges, and Contentment</h2>
+<p1>What to do, where to dine, and where to stay in Northfield, MN</p>
+  <!--*** Add all of the meta, link, script, and style tags below -->
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'/>
+	
+    <link rel="stylesheet" href="leaflet-0.7/leaflet.css" />
+	<!--[if lte IE 8]>
+	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.ie.css" />
+	<![endif]-->
+ 
+ <script src="leaflet-0.7/leaflet.js"></script>
+  
+  <!-- you can change the width and height of your map below or cut this out and in your css sheet add the #map {width: ; height: ;} rules as you would with any other div tag -->
+  <style>#map { width:600px; height:500px; }</style>
+  <!-- **** end of the items that you will add from the head tag -->
+</head>
+
+<body>
+<p2>Key:</p2>
+<p3>By: Brooke Harding<br />UW Madison Cartography/GIS<br />G572 November 2013</p3>
+<p4>(Icons appear as user increases zoom level)</p4>
+<div id="container" style="width:825px;">
+<div id="map"></div>
+</div>
+<div id="legend" style="width:250px;">
+<img src="img/Legend.png" />
+</div>
+<script>  	
+  	// change the set view section to match setting that you created in TileMill under the wrench icon .setView([lat, long], initial zoom level)
+     // .setView([43.0760,-89.3816], 12).maxZoom(12);
+	  var map = L.map('map',{
+    // change the set view section to match setting that you created in TileMill under the wrench icon 
+      ////constrain how far they will be able to zoom into the map
+      maxZoom: 17,
+      minZoom: 13,
+      
+      //max bounds: [[southLat,westLong],[northLat,eastLong]]
+      //TileMill Set bounds box:  westLong,southLat,eastLong,northLat  
+      //example this from tile mill go to the below example -89.5142,42.9715,-89.2354,43.1541 
+       //maxBounds:[ [44.4202,-93.2141],[44.4793,-93.1177]]
+    // .setView([center], zoom); // .setView([lat, long], initalZoom level)
+    }).setView([44.4533,-93.1653], 13);
+	
+
+  	
+     
+      
+  L.tileLayer(
+	//change the tile set to point to your tiles. After the v/3 insert the name of your mapbox account and id of tiles. 'http://a.tiles.mapbox.com/v3/YOUR_TILE_NAME//{z}/{x}/{y}.png')
+	'http://a.tiles.mapbox.com/v3/bharding.Lab3_UGH/{z}/{x}/{y}.png',{
+	
+	   // beetwen the '' incert the name and links to all of your data sources. use <a> tags to link to websites as needed
+	   attribution: 'Made with: <a href="http://mapbox.com">TileMill</a> Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
+	}).addTo(map);
+
+  // if you are not doing solution 3 then delete this line down to where the < /script > is, but don't delete the script tag!
+
+  // now add a geoJson of your csv points as a variable 
+  // open your csv in a simple text editor (such as sublime or textWrangler), copy every thing. Then in a browser go to http://togeojson.com and paste in your csv data.  It will zzthen create a geoJson of your csv that you can copy and paste into this html.
+  // Add var markers = to geoJson that you pasted in.
+  // Then delete {"type";"FeatureCollection,"features": then so that after the var markers = starts with [{"type"
+  //at the end of your geoJson delete the last } and add a ;
+ var markers=[{"type":"Feature","geometry":{"type":"Point","coordinates":["-93.14767","44.458536"]},"properties":{"Category":"Arboretum","Name":"Carleton College Cowling Arboretum","Description":"Woodland Trails and Prairie Habitat"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-93.140163","44.437507"]},"properties":{"Category":"Archery_Range","Name":"Northfield Archery Range","Description":"Archery Shooting"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-93.159531","44.45723"]},"properties":{"Category":"Bakery","Name":"Cakewalk","Description":"Desserts"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-93.160333","44.455683"]},"properties":{"Category":"Bakery","Name":"Quality Bakery","Description":"Bakery"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-93.169167","44.44824"]},"properties":{"Category":"Bakery","Name":"Brick Oven Bakery","Description":"Bakery"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-93.159476","44.45563"]},"properties":{"Category":"Bikes","Name":"Mike's Bicycle Shop","Description":"Local Bike Shop"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-93.159692","44.456621"]},"properties":{"Category":"Bikes","Name":"FIT to be TRI'd LLC","Description":"Local Bike Shop"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-93.181357","44.440632"]},"properties":{"Category":"Bowling","Name":"Jesse James Lanes","Description":"Bowling Alley"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-93.165247","44.455451"]},"properties":{"Category":"Coffee","Name":"Caribou Coffee","Description":"Minnesota Based Coffee Chain"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-93.183171","44.437672"]},"properties":{"Category":"Coffee","Name":"James Gang Coffeehouse and Eatery","Description":"Local Coffee Shop"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-93.159611","44.456683"]},"properties":{"Category":"Coffee","Name":"Goodbye Blue Monday Coffeehouse","Description":"Local Coffee Shop"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-93.159821","44.455488"]},"properties":{"Category":"Coffee","Name":"The Hideaway Coffeehouse and Winebar","Description":"Local Coffee Shop"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-93.185654","44.433601"]},"properties":{"Category":"Coffee","Name":"Starbucks","Description":"American Global Coffee Chain"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-93.155555","44.460802"]},"properties":{"Category":"Coffee","Name":"The Cave at Carleton College","Description":"Carleton Coffee Shop in Margaret Evans Dormitory"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-93.182959","44.461888"]},"properties":{"Category":"Coffee","Name":"The Cage at St. Olaf College","Description":"St. Olaf Coffee Shop in Buntrock Commons"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-93.183425","44.461115"]},"properties":{"Category":"College","Name":"St. Olaf College","Description":"Private Liberal Arts College"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-93.155606","44.461333"]},"properties":{"Category":"College","Name":"Carleton College","Description":"Private Liberal Arts College"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-93.169565","44.451674"]},"properties":{"Category":"Dog_Park","Name":"Northfield Dog Park","Description":"Public Dog Park"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-93.314377","44.49263"]},"properties":{"Category":"Golf","Name":"Willinger's Golf Club","Description":"Upscale Public Championship Golf Course"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-93.1434","44.451503"]},"properties":{"Category":"Golf","Name":"Northfield Golf Club","Description":"Semi-Private Championship Golf Course"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-93.140813","44.464329"]},"properties":{"Category":"Golf","Name":"Twin Oaks Driving Range","Description":"Natural Grass Driving Range"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-93.159747","44.457984"]},"properties":{"Category":"Hotel","Name":"Archer House River Inn","Description":"Local Hotel"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-93.164144","44.456237"]},"properties":{"Category":"Hotel","Name":"Country Inn By Carlson","Description":"Chain Hotel"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-93.177717","44.444711"]},"properties":{"Category":"Hotel","Name":"AmericInn¨ Lodge & Suites","Description":"Chain Hotel"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-93.182687","44.440552"]},"properties":{"Category":"Hotel","Name":"Americas Best Value Inn & Suites","Description":"Chain Hotel"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-93.161403","44.456964"]},"properties":{"Category":"Hotel","Name":"Froggy Bottoms River Pub & Suites","Description":"Local Hotel"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-93.158834","44.457789"]},"properties":{"Category":"Library","Name":"Northfield Public Library","Description":"Local Public Library"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-93.159812","44.45491"]},"properties":{"Category":"Local_Bar","Name":"J. Grundy's Rueb 'n' Stein","Description":"Local Bar"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-93.159747","44.457984"]},"properties":{"Category":"Local_Bar","Name":"The Tavern of Northfield","Description":"Local Bar"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-93.161403","44.456964"]},"properties":{"Category":"Local_Bar","Name":"Froggy Bottoms River Pub & Suites","Description":"Local Bar"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-93.160049","44.457509"]},"properties":{"Category":"Local_Bar","Name":"The Contented Cow Pub and Wine Bar","Description":"Local Bar"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-93.159747","44.457984"]},"properties":{"Category":"Local_Food_Favorites","Name":"The Tavern of Northfield","Description":"Breakfast/Brunch and American Pub Food"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-93.15931","44.457643"]},"properties":{"Category":"Local_Food_Favorites","Name":"Chapati","Description":"Indian"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-93.171726","44.449102"]},"properties":{"Category":"Local_Food_Favorites","Name":"El Tequila","Description":"Mexican"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-93.159457","44.456377"]},"properties":{"Category":"Local_Food_Favorites","Name":"Mandarin Garden","Description":"Chinese"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-93.161568","44.457192"]},"properties":{"Category":"Local_Food_Favorites","Name":"Basil's Pizza Palace","Description":"Greek"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-93.173444","44.447752"]},"properties":{"Category":"Local_Food_Favorites","Name":"George's Vineyard","Description":"Greek"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-93.160031","44.455664"]},"properties":{"Category":"Local_Food_Favorites","Name":"Hogan Brothers Acoustic CafŽ","Description":"Sandwiches and Soups"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-93.175274","44.460277"]},"properties":{"Category":"Local_Food_Favorites","Name":"Ole Store Restaurant","Description":"Modern American"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-93.162549","44.457625"]},"properties":{"Category":"Local_Food_Favorites","Name":"Quarterback Club Family Restaurant","Description":"Family Restaurant"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-93.159793","44.45674"]},"properties":{"Category":"Local_Food_Favorites","Name":"Tandem Bagels","Description":"Bagels"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-93.160437","44.455822"]},"properties":{"Category":"Museum","Name":"Northfield Historical Society","Description":"Local History Including the Defeat of Jesse James"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-93.156659","44.457346"]},"properties":{"Category":"Museum","Name":"The Perlman Teaching Museum","Description":"Carleton College Art Museum in the Weitz Center for Creativity"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-93.183425","44.461115"]},"properties":{"Category":"Museum","Name":"Flaten Art Museum","Description":"St. Olaf College Art Museum in the Dittmann Center"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-93.186398","44.460925"]},"properties":{"Category":"Museum","Name":"The Norwegian-American Historical Association","Description":"Open Archives of Norwegian-American History located at St. Olaf College"}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-93.160034","44.457379"]},"properties":{"Category":"Museum","Name":"Northfield Arts Guild","Description":"Non-profit with classes/performances/exhibits in arts/drama/music/dance."}},{"type":"Feature","geometry":{"type":"Point","coordinates":["-93.148678","44.453604"]},"properties":{"Category":"Outdoor_Pool","Name":"Old Memorial Pool","Description":"Outdoor Seasonal Pool"}}];  
+
+  //copy and paste this
+  // the radius is how big the invisible circle is to make it larger increase the number to give a bigger clicking area
+  var style = {
+    radius: 15,
+    color: "#000",
+    weight: 1,
+    opacity: 0,
+    fillOpacity: 0.0
+  };
+
+  L.geoJson(markers,{
+   pointToLayer: function (feature, latlng) {
+        return L.circleMarker(latlng, style);
+      },
+      onEachFeature: onEachFeature
+  }).addTo(map);
+
+// change the .Name to match the column in your CSV the same goes for description
+  function onEachFeature (feature, layer){
+    var popUpInfo = "<p style='font-family:arial;color:gray;font-size:14px;''> Name: "+ layer.feature.properties.Name+ "</p>"+ "<p style='font-family:arial;color:gray;font-size:14px;''> Description: "+ layer.feature.properties.Description;
+
+    if(feature.properties && feature.properties.popUpInfo){
+      popUpInfo += feature.properties.popUpInfo;
+    }
+    layer.bindPopup(popUpInfo);
+  }
+
+
+  </script>
+</div>
+</body>
+</html>
